@@ -44,6 +44,6 @@ app.get("/upload", async (req, res) => {
   res.send(data);
 })
 
-app.listen(3000, (req, res) => {
+app.listen(9000, (req, res) => {
   console.log("Server is running");
 })
