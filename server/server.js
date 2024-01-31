@@ -45,7 +45,7 @@ app.get("/upload", async (req, res) => {
 })
 
 app.get("/", (req, res) => {
-  console.log("Hello World");
+  res.send("Hello World");
 })
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
