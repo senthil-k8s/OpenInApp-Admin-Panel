@@ -7,7 +7,7 @@ const { Router } = require('express');
 const router = Router();
 
 
-router.post("/upload", upload.any(), async (req, res) => {
+router.post("/", upload.any(), async (req, res) => {
   const data = req.files;
   const workSheetsFromBuffer = xlsx.parse(fs.readFileSync(`${__dirname}/uploads/${req.files[0].filename}`));
   const Data = workSheetsFromBuffer[0].data.slice(1).map(item => (
@@ -26,7 +26,7 @@ router.post("/upload", upload.any(), async (req, res) => {
   res.status(200).send({ success: true, data: Data });
 })
 
-router.get("/upload", async (req, res) => {
+router.get("/", async (req, res) => {
   const data = await Record.find({});
   res.send(data);
 })
