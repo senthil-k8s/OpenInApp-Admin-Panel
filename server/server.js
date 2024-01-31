@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 })
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
-  app.listen(9000,  (req, res) => {
+  app.listen(10000 ,  (req, res) => {
     console.log("Server is running");
   })
 }).catch(err => console.log(err))
