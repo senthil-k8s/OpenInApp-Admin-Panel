@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
-import Tag from './Tag';
+import React, { useState } from "react";
+import Tag from "./Tag";
 
 const SearchTag = () => {
   const [selectedTags, setSelectedTags] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const availableTags = ['snacks', 'grocery', 'dairy products', 'vegetables', 'fruits', 'cool drink', 'chocolate', 'Bakery', 'Meats & Seafood', 'Beverages', 'Organic & Natural'];
+  const [searchQuery, setSearchQuery] = useState("");
+  const availableTags = [
+    "snacks",
+    "grocery",
+    "dairy products",
+    "vegetables",
+    "fruits",
+    "cool drink",
+    "chocolate",
+    "Bakery",
+    "Meats & Seafood",
+    "Beverages",
+    "Organic & Natural",
+  ];
 
   const handleTagClick = (tag) => {
     if (!selectedTags.includes(tag)) {
@@ -17,7 +29,7 @@ const SearchTag = () => {
   };
 
   const filteredTags = availableTags.filter((tag) =>
-    tag.toLowerCase().includes(searchQuery.toLowerCase())
+    tag.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
@@ -33,9 +45,15 @@ const SearchTag = () => {
         <div className="border-4 h-[30vh] pt-5">
           <div className="flex flex-wrap">
             {selectedTags.map((tag) => (
-              <div key={tag} className="border rounded-lg m-1 p-2 bg-gray-500 text-white text-xs">
+              <div
+                key={tag}
+                className="border rounded-lg m-1 p-2 bg-gray-500 text-white text-xs"
+              >
                 {tag}
-                <span className="ml-2 cursor-pointer text-red-800 font-bold" onClick={() => handleRemoveTag(tag)}>
+                <span
+                  className="ml-2 cursor-pointer text-red-800 font-bold"
+                  onClick={() => handleRemoveTag(tag)}
+                >
                   &#10005;
                 </span>
               </div>
