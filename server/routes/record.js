@@ -1,9 +1,11 @@
 const Record = require("../models/Record");
-const router = require("express").Router();
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const xlsx = require('node-xlsx');
 const fs = require('fs');
+const { Router } = require('express');
+const router = Router();
+
 
 router.post("/upload", upload.any(), async (req, res) => {
   const data = req.files;

@@ -8,12 +8,11 @@ const router = require("express").Router();
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const xlsx = require('node-xlsx');
+const dotenv = require("dotenv");
 const fs = require('fs');
+dotenv.config();
 
-mongoose.connect('mongodb://localhost:27017/senthil', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGO_URL);
 
 app.use(cors());
 app.use(express.json());
