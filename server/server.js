@@ -17,7 +17,7 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/upload", recordRoute);
+app.use("/upload", recordRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
